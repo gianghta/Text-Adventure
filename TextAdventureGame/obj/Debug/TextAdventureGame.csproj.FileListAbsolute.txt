@@ -1,7 +1,0 @@
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\bin\Debug\TextAdventureGame.exe.config
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\bin\Debug\TextAdventureGame.exe
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\bin\Debug\TextAdventureGame.pdb
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\obj\Debug\TextAdventureGame.csprojAssemblyReference.cache
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\obj\Debug\TextAdventureGame.csproj.CoreCompileInputs.cache
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\obj\Debug\TextAdventureGame.exe
-C:\PersonalProject\DungeonCrawler\TextAdventureGame\obj\Debug\TextAdventureGame.pdb
