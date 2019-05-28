@@ -9,6 +9,14 @@ namespace TextAdventureGame
     class Player
     {
         public string Name { get; set; }
-        public string Level { get; set; }
+        public int HealthPoint { get; set; }
+        public List<Item> Inventory { get; private set; }
+
+        public Player()
+        {
+            Name = "null";
+            HealthPoint = 200;
+            Inventory = new List<Item>();
+        }
     }
 }

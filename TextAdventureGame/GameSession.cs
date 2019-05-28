@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace TextAdventureGame
 {
+    enum Direction
+    {
+        North,
+        South,
+        West,
+        East
+    }
+
     public static class GameSession
     {
         static void Title()
@@ -35,9 +43,46 @@ _          _____  _
             Console.Clear();
         }
 
+        static void Intro()
+        {
+            System.Threading.Thread.Sleep(700);
+            Console.WriteLine("This is the first part of the story");
+            Console.WriteLine("Press any keys to continue");
+            Console.ReadKey();
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
+        }
+
+        static void DescribeRoom(Room room)
+        {
+            string exitsText = string.Join(", ", room.roomExits.Keys.ToArray());
+            if (string.IsNullOrEmpty(exitsText))
+            {
+                exitsText = "None";
+            }
+            Console.WriteLine("{0}\n\n{1}\n\nExits Are: {2}\n", room.Name, room.Description, exitsText);
+        }
+
+        static void CreatePlayer()
+        {
+            var player = new Player();
+            Console.Write("Please tell us your name, great adventurer: ");
+            player.Name = Console.ReadLine();
+            Console.WriteLine("So, your name is {0}", player.Name);
+        }
+
         public static void StartGame()
         {
             Title();
+            Intro();
+            Room main = new Room() { Name = "Main", Description = "This is the main room." };
+            CreatePlayer();
+            DescribeRoom(main);
         }
 
         /*
@@ -45,16 +90,6 @@ _          _____  _
          * and apply to my own game
          * These are taken from the Internet
          * 
-        static void Describe(Room room)
-        {
-            string exitsText = string.Join(", ", room.exits.Keys.ToArray());
-            if (string.IsNullOrEmpty(exitsText))
-            {
-                exitsText = "None";
-            }
-            Console.WriteLine("{0}\n\n{1}\n\nExits Are: {2}\n", room.name, room.description, exitsText);
-        }
-
         static Room Setup()
         {
             Room main = new Room() { name = "Main", description = "This is the main room." };

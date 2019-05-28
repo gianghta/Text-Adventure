@@ -13,14 +13,6 @@ using System.Linq;
 
 namespace TextAdventureGame
 {
-    enum Direction
-    {
-        North,
-        South,
-        West,
-        East
-    }
-
     class Program
     {
         static void Main(string[] args)

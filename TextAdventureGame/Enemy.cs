@@ -10,6 +10,6 @@ namespace TextAdventureGame
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public float CombatPower { get; set; }
+        public int CombatPower { get; set; }
     }
 }
