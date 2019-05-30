@@ -12,3 +12,10 @@ D:\C#-projects\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.cspr
 D:\C#-projects\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.csproj.CoreCompileInputs.cache
 D:\C#-projects\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.exe
 D:\C#-projects\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.pdb
+C:\PersonalProject\Text-Adventure\TextAdventureGame\bin\Debug\TextAdventureGame.exe.config
+C:\PersonalProject\Text-Adventure\TextAdventureGame\bin\Debug\TextAdventureGame.exe
+C:\PersonalProject\Text-Adventure\TextAdventureGame\bin\Debug\TextAdventureGame.pdb
+C:\PersonalProject\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.csprojAssemblyReference.cache
+C:\PersonalProject\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.csproj.CoreCompileInputs.cache
+C:\PersonalProject\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.exe
+C:\PersonalProject\Text-Adventure\TextAdventureGame\obj\Debug\TextAdventureGame.pdb

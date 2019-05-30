@@ -6,14 +6,6 @@ using System.Threading.Tasks;
 
 namespace TextAdventureGame
 {
-    enum Direction
-    {
-        North,
-        South,
-        West,
-        East
-    }
-
     public static class GameSession
     {
         static void Title()
@@ -60,12 +52,7 @@ _          _____  _
 
         static void DescribeRoom(Room room)
         {
-            string exitsText = string.Join(", ", room.roomExits.Keys.ToArray());
-            if (string.IsNullOrEmpty(exitsText))
-            {
-                exitsText = "None";
-            }
-            Console.WriteLine("{0}\n\n{1}\n\nExits Are: {2}\n", room.Name, room.Description, exitsText);
+            Console.WriteLine("{0}\n\n{1}\n\nEntrances are: \n", room.RoomName, room.RoomDescription);
         }
 
         static void CreatePlayer()
@@ -80,7 +67,7 @@ _          _____  _
         {
             Title();
             Intro();
-            Room main = new Room() { Name = "Main", Description = "This is the main room." };
+            Room main = new Room("Main", "This is the main room");
             CreatePlayer();
             DescribeRoom(main);
         }

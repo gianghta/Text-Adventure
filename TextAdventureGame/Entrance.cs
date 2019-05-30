@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace TextAdventureGame
 {
-    class Enemy
+    public enum Directions
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int CombatPower { get; set; }
+        Undefined, North, South, East, West
+    };
+
+    class Entrance
+    {
+        
     }
 }
