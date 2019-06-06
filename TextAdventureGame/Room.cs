@@ -11,14 +11,12 @@ namespace TextAdventureGame
         internal string RoomName { get; set; }
         internal string RoomDescription { get; set; }
         private List<Entrance> entrances;
-        private List<Item> itemsInRoom;
 
         public Room()
         {
             RoomName = "";
             RoomDescription = "";
             entrances = new List<Entrance>();
-            itemsInRoom = new List<Item>();
         }
 
         public Room(string title)
@@ -26,7 +24,6 @@ namespace TextAdventureGame
             RoomName = title;
             RoomDescription = "";
             entrances = new List<Entrance>();
-            itemsInRoom = new List<Item>();
         }
 
         public Room(string title, string description)
@@ -34,7 +31,6 @@ namespace TextAdventureGame
             RoomName = title;
             RoomDescription = description;
             entrances = new List<Entrance>();
-            itemsInRoom = new List<Item>();
         }
 
         public void AddEntrance(Entrance newEntrance)
@@ -50,27 +46,9 @@ namespace TextAdventureGame
             }
         }
 
-        public void AddItemToRoom(Item newItem)
-        {
-            itemsInRoom.Add(newItem);
-        }
-
-        public void RemoveItemFromRoom(Item currentItem)
-        {
-            if(itemsInRoom.Contains(currentItem))
-            {
-                itemsInRoom.Remove(currentItem);
-            }
-        }
-
         public List<Entrance> GetEntranceList()
         {
             return new List<Entrance>(entrances);
-        }
-
-        public List<Item> GetRoomItemList()
-        {
-            return new List<Item>(itemsInRoom);
         }
     }
 }

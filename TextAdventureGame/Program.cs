@@ -17,8 +17,12 @@ namespace TextAdventureGame
     {
         static void Main(string[] args)
         {
-            GameSession.StartGame();
-            Console.Read();
+            GameSession game = new GameSession();
+
+            while (game.isRunning)
+            {
+                game.Update();
+            }
         }
     }
 }

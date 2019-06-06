@@ -6,8 +6,48 @@ using System.Threading.Tasks;
 
 namespace TextAdventureGame
 {
-    public static class GameSession
+    enum Command
     {
+        Undefined,
+        Look,
+        Move,
+        Use,
+        Run,
+        Fight,
+        Inventory,
+        Help,
+    }
+
+    public class GameSession
+    {
+        public bool isRunning = true;
+
+        private Room currentRoom;
+        private Inventory inventory; //Player's inventory
+        Dictionary<string, Command> GameCommands;
+
+        public GameSession()
+        {
+            GameCommands = new Dictionary<string, Command>
+            {
+                {"use", Command.Use }, {"look", Command.Look}, {"run", Command.Run},
+                {"fight", Command.Fight}, {"move", Command.Move},
+                {"inventory", Command.Inventory }, {"help", Command.Help}
+            };
+
+            Room firstRoom = new Room("Entrance Cave", "A dark gritty cave that smell like dead fish as the light slowly fade behind your back when you entered");
+            Room secondRoom = new Room("Second room", "This is the second room that has one entrance to the West and one entrance to the East");
+            Room thirdRoom = new Room("Third room on the West Entrance of second room", "Test description");
+            Room fourthRoom = new Room("Fourth room on the East Entrance of second room", "Test Description");
+
+            firstRoom.AddEntrance(new Entrance(Directions.South, secondRoom));
+
+            secondRoom.AddEntrance(new Entrance(Directions.North, firstRoom));
+            secondRoom.AddEntrance(new Entrance(Directions.West, thirdRoom));
+            secondRoom.AddEntrance(new Entrance(Directions.East, fourthRoom));
+
+        }
+
         static void Title()
         {
             string Title = @" _____         _      _  
@@ -50,53 +90,22 @@ _          _____  _
             Console.Clear();
         }
 
-        static void DescribeRoom(Room room)
-        {
-            Console.WriteLine("{0}\n\n{1}\n\nEntrances are: \n", room.RoomName, room.RoomDescription);
-        }
-
-        static void CreatePlayer()
-        {
-            var player = new Player();
-            Console.Write("Please tell us your name, great adventurer: ");
-            player.Name = Console.ReadLine();
-            Console.WriteLine("So, your name is {0}", player.Name);
-        }
-
         public static void StartGame()
         {
             Title();
             Intro();
-            Room main = new Room("Main", "This is the main room");
-            CreatePlayer();
-            DescribeRoom(main);
         }
 
-        /*
-         * Reference code to learn/study
-         * and apply to my own game
-         * These are taken from the Internet
-         * 
-        static Room Setup()
+        public void Update()
         {
-            Room main = new Room() { name = "Main", description = "This is the main room." };
-            Room eastWing = new Room() { name = "East Wing", description = "This is the east wing." };
-            Room closet = new Room() { name = "Closet", description = "This is a closet.  The door locked behind you." };
-            Room passage = new Room() { name = "Secret passage", description = "This is a long secret passage." };
-            Room vestibule = new Room() { name = "Vestibule", description = "This is a vestibule." };
+            string currentCommand = Console.ReadLine().ToLower();
 
-            main.exits.Add(Direction.East, eastWing);
-            main.exits.Add(Direction.West, closet);
-            eastWing.exits.Add(Direction.West, main);
-            closet.exits.Add(Direction.West, passage);
-            passage.exits.Add(Direction.North, closet);
-            passage.exits.Add(Direction.East, vestibule);
-            vestibule.exits.Add(Direction.West, passage);
-            vestibule.exits.Add(Direction.South, main);
-
-            return main;
-
+            if (currentCommand == "quit" || currentCommand == "q")
+            {
+                isRunning = false;
+                return;
+            }
+            StartGame();
         }
-        */
     }
 }
