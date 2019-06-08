@@ -2,9 +2,7 @@
  * Text Adventure game
  * by Giang Ta, May 23 2019
  * 
- * The game storyline and scenario
- * is inspired by Goblin Slayer manga
- * with a bit mix of Dungeon & Dragon setup
+ * A text RPG made in free time
  */
 
 using System;

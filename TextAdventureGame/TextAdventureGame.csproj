@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entrance.cs" />
-    <Compile Include="Inventory.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="GameSession.cs" />
     <Compile Include="Item.cs" />
